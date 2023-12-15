@@ -32,9 +32,12 @@ export interface Order {
     lat: number,
     lng: number,
     rating?: number,
-    clientId: number,
-    driverId: number,
-    storeId: number,
+    client: User,
+    driver: User,
+    store: {
+        id: number,
+        name: string
+    },
     items: OrderItem[],
     prepTime: number,
     deliveryTime: number,
@@ -71,4 +74,10 @@ export interface User {
     phone: string,
     userType: UserType
 
+}
+
+export interface GeoAddress {
+    lat: number,
+    lng: number,
+    address: string,
 }
