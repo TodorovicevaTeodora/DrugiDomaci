@@ -44,7 +44,7 @@ export default function HomePage() {
                                         </div>
                                     </div>
                                     <NavLink to={'/store/' + store.id}>
-                                        <button className='btn btn-primary'>
+                                        <button className='btn btn'>
                                             Open
                                         </button>
                                     </NavLink>

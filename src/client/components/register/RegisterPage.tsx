@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router';
 import Input from '../../../components/Input';
 import { useUserContext } from '../../../context/UserContext';
+import Container from '../../../components/container/Container';
 
 export default function RegisterPage() {
     const { register } = useUserContext()
@@ -13,8 +14,7 @@ export default function RegisterPage() {
 
     const navigate = useNavigate();
     return (
-        <div className='register-page'>
-            <h2 style={{ textAlign: 'center' }}>Register</h2>
+        <Container header='Register'>
             <form onSubmit={async e => {
                 e.preventDefault();
                 await register({
@@ -60,6 +60,6 @@ export default function RegisterPage() {
                 />
                 <button className='form-control btn btn-primary mt-3'>Register</button>
             </form>
-        </div>
+        </Container>
     )
 }

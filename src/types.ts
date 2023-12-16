@@ -3,6 +3,7 @@ export interface Item {
     createdAt: string,
     name: string,
     price: number,
+    image: string;
     disabled: boolean,
     storeId: number
 }
