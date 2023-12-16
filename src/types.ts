@@ -9,21 +9,6 @@ export interface Item {
 }
 export type OrderStatus = 'pending' | 'accepted' | 'rejected' | 'prepared'
 export type DriverStatus = 'assigned' | 'picked_up' | 'delivered'
-export interface BaseOrder {
-    id: number,
-    createdAt: string,
-    address: string,
-    status: OrderStatus,
-    driverStatus: DriverStatus,
-    lat: number,
-    lng?: number,
-    rating?: number,
-    clientId: number,
-    driverId: number,
-    storeId: number,
-    prepTime: number,
-    deliveryTime: number,
-}
 export interface Order {
     id: number,
     createdAt: string,
@@ -35,13 +20,11 @@ export interface Order {
     rating?: number,
     client: User,
     driver: User,
-    store: {
-        id: number,
-        name: string
-    },
+    store: Store,
     items: OrderItem[],
     prepTime: number,
     deliveryTime: number,
+    deliveryPrice: number
 }
 export interface Pagination<T> {
     data: T[],

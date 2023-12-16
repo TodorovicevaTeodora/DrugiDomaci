@@ -7,7 +7,7 @@ interface Props {
 }
 export default function Container(props: Props) {
     return (
-        <div className={'app-container' + (props.className || '')}>
+        <div className={'app-container ' + (props.className || '')}>
             {
                 props.header && (
                     <h2 className='header'>{[props.header]}</h2>
