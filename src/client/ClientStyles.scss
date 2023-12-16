@@ -1,4 +1,6 @@
 @use './components/navbar/Navbar.scss';
+@use './components/login/LoginPage.scss';
+@use './components/register/RegisterPage.scss';
 
 .main {
     display: flex;

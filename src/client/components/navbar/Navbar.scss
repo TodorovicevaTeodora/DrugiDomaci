@@ -9,4 +9,16 @@
     border-bottom-color: rgb(175, 175, 175);
     align-items: center;
     justify-content: space-between;
+
+    .content {
+        padding-left: 40px;
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+
+        .buttons {
+            display: flex;
+
+        }
+    }
 }

@@ -1,15 +1,16 @@
 import React from 'react'
 import { useUserContext } from '../../context/UserContext'
+import NavButton from '../navButton/NavButton';
 export default function UserInfo() {
     const { user, logout } = useUserContext();
     return (
         <div className='user-info'>
             <div className='info'>
-                {user?.name || 'Lazar Milosavlejv'}
+                {user?.name || ''}
             </div>
-            <button onClick={logout} className='nav-button'>
+            <NavButton onClick={logout}>
                 Logout
-            </button>
+            </NavButton>
         </div>
     )
 }

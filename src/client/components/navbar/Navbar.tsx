@@ -3,6 +3,7 @@ import Logo from '../../../components/logo/Logo'
 import { useUserContext } from '../../../context/UserContext'
 import { NavLink } from 'react-router-dom';
 import UserInfo from '../../../components/userInfo/UserInfo';
+import NavButton from '../../../components/navButton/NavButton';
 
 export default function Navbar() {
     const { user } = useUserContext();
@@ -13,15 +14,26 @@ export default function Navbar() {
             </NavLink>
             {!user ? (
                 <div>
-                    <button className='nav-button'>
+                    <NavButton>
                         <NavLink className='link' to='/login'>Login</NavLink>
-                    </button>
-                    <button className='nav-button'>
+                    </NavButton>
+                    <NavButton>
                         <NavLink className='link' to='/register'>Register</NavLink>
-                    </button>
+                    </NavButton>
                 </div>
             ) : (
-                <UserInfo />
+                <div className='content'>
+                    <div className='buttons'>
+
+                        <NavButton>
+                            <NavLink className='link' to='/'>Home</NavLink>
+                        </NavButton>
+                        <NavButton>
+                            <NavLink className='link' to='/orders'>Order history</NavLink>
+                        </NavButton>
+                    </div>
+                    <UserInfo />
+                </div>
             )}
         </div>
     )
