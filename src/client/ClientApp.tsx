@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router'
 import { useUserContext } from '../context/UserContext'
 import LoginPage from './components/login/LoginPage';
 import RegisterPage from './components/register/RegisterPage';
+import HomePage from './components/home/HomePage';
 
 export default function ClientApp() {
     const { user } = useUserContext();
@@ -25,7 +26,7 @@ export default function ClientApp() {
                     )
                 }
                 <Route path='/store/:id' />
-                <Route path='/' />
+                <Route path='/' element={<HomePage />} />
             </Routes>
         </div>
     )
