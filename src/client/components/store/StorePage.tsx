@@ -8,6 +8,7 @@ import CenterTooltip from '../home/CenterTooltip';
 import StoreItem from './StoreItem';
 import { useCartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+import CostBreakdown from './CostBreakdown';
 
 export default function StorePage() {
     const id = useParams().id;
@@ -78,36 +79,7 @@ export default function StorePage() {
                     <div className='pt-2'>
                         <h4>Adress: <span>{store.address}</span></h4>
                     </div>
-                    <div className='items-summary'>
-                        {items.map(cartItem => {
-                            const storeItem = store.items.find(i => i.id === cartItem.itemId)
-                            return (
-                                <div key={cartItem.itemId} >
-                                    <div>
-                                        {storeItem?.name || ''}
-                                    </div>
-                                    <div className='calc-row'>
-                                        <div>
-                                            {`${cartItem.count} X ${storeItem?.price}`}
-                                        </div>
-                                        <div>
-                                            {(cartItem.count * (storeItem?.price || 0)) + ' RSD'}
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                    <div className='total'>
-                        <div>
-                            Total
-                        </div>
-                        <div>
-                            {items.reduce((acc, cartItem) => {
-                                return acc + cartItem.count * (store.items.find(i => i.id === cartItem.itemId)?.price || 0);
-                            }, 0) + ' RSD'}
-                        </div>
-                    </div>
+                    <CostBreakdown />
                     {
                         items.length > 0 && (
                             <Link to='/cart'>

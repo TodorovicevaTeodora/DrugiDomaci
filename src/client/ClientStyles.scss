@@ -1,6 +1,7 @@
 @use './components/navbar/Navbar.scss';
 @use './components/home/HomePage.scss';
 @use './components/store/StorePage.scss';
+@use './components/cart/CartPage.scss';
 
 .main {
     display: flex;

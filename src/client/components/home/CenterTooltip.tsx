@@ -8,6 +8,7 @@ interface Props {
 
 export default function CenterTooltip(props: Props) {
     const map = useMap();
+    console.log(props)
     useEffect(() => {
         map.setView({ lat: props.lat, lng: props.lng })
     }, [props.lat, props.lng])

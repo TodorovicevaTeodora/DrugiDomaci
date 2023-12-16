@@ -7,6 +7,7 @@ import RegisterPage from './components/register/RegisterPage';
 import HomePage from './components/home/HomePage';
 import StorePage from './components/store/StorePage';
 import { CartContextProvider } from './context/CartContext';
+import CartPage from './components/cart/CartPage';
 
 export default function ClientApp() {
     const { user } = useUserContext();
@@ -23,7 +24,7 @@ export default function ClientApp() {
                             </>
                         ) : (
                             <>
-                                <Route path='/cart' />
+                                <Route path='/cart' element={<CartPage />} />
                                 <Route path='/orders' />
                             </>
                         )

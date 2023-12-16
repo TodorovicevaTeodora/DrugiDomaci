@@ -1,6 +1,6 @@
 
 import React, { useContext, useState } from 'react'
-import { Item, Store } from '../../types'
+import { Store } from '../../types'
 
 export interface ContextType {
     store?: Store;
